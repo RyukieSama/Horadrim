@@ -1,0 +1,9 @@
+interface:
+  display_name: "CloudKit 媒体同步"
+  short_description: "CloudKit 媒体上传/查询/下载缓存骨架"
+  default_prompt: "Use $cloudkit-media-sync to generate a reusable CloudKit media sync architecture and code structure."
+dependencies:
+  tools: []
+policy:
+  allow_implicit_invocation: true
+

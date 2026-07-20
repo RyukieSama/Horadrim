@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="使用 Apple CloudKit，低成本为独立开发者的 App 建立用户身份和数据同步体系。">
+<title>用 CloudKit，零成本拥有自己的用户体系</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    color-scheme: light dark;
+    --page: #f5f7fb;
+    --paper: #ffffff;
+    --text: #26313d;
+    --muted: #6f7b88;
+    --heading: #17212b;
+    --line: #e7ebf0;
+    --accent: #4f62d8;
+    --accent-soft: #eef1ff;
+    --code-bg: #182235;
+    --code-text: #dce6ff;
+    --quote-bg: #f7f8fc;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text);
+    background: var(--page);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  article {
+    max-width: 760px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 76px 54px 110px;
+    background: var(--paper);
+    box-shadow: 0 2px 10px rgba(24, 38, 64, .04), 0 18px 48px rgba(24, 38, 64, .06);
+  }
+
+  h1 {
+    margin-bottom: 54px;
+    color: var(--heading);
+    font-size: 32px;
+    font-weight: 750;
+    line-height: 1.35;
+    letter-spacing: .015em;
+  }
+
+  h1::after {
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 22px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, #566ee4, #9b7cf4);
+    content: "";
+  }
+
+  h2 {
+    position: relative;
+    margin: 2.8em 0 1.1em;
+    padding-left: 16px;
+    color: var(--heading);
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  h2::before {
+    position: absolute;
+    top: .18em;
+    bottom: .18em;
+    left: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #586fe2, #9878ee);
+    content: "";
+  }
+
+  h3 {
+    margin: 2em 0 .7em;
+    color: var(--heading);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  p {
+    margin-bottom: 1.25em;
+    text-align: justify;
+    text-justify: inter-ideograph;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong, b {
+    color: var(--heading);
+    font-weight: 650;
+  }
+
+  blockquote {
+    margin: 1.6em 0;
+    padding: 16px 20px;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    color: var(--muted);
+    background: var(--quote-bg);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  blockquote p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  ul, ol {
+    margin: 1.1em 0 1.35em 1.2em;
+    padding-left: 1.15em;
+  }
+
+  li {
+    margin-bottom: .42em;
+    padding-left: .25em;
+  }
+
+  li::marker { color: var(--accent); }
+
+  pre {
+    overflow-x: auto;
+    margin: 1.5em 0;
+    padding: 20px 22px;
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 10px;
+    color: var(--code-text);
+    background: var(--code-bg);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    tab-size: 4;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+
+  :not(pre) > code {
+    padding: .15em .38em;
+    border-radius: 4px;
+    color: #4c59ae;
+    background: var(--accent-soft);
+    font-size: .9em;
+  }
+
+  hr {
+    height: 1px;
+    margin: 2.8em 0;
+    border: 0;
+    background: linear-gradient(to right, transparent, var(--line) 18%, var(--line) 82%, transparent);
+  }
+
+  .ending {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--line);
+    color: var(--heading);
+    font-weight: 550;
+  }
+
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+
+    article {
+      padding: 48px 21px 72px;
+      box-shadow: none;
+    }
+
+    h1 {
+      margin-bottom: 42px;
+      font-size: 27px;
+    }
+
+    h2 { font-size: 21px; }
+    h3 { font-size: 18px; }
+    pre { margin-right: -4px; margin-left: -4px; padding: 16px; font-size: 13px; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #151922;
+      --paper: #20242d;
+      --text: #cbd2dd;
+      --muted: #9da7b6;
+      --heading: #f0f3f8;
+      --line: #363d49;
+      --accent-soft: #2d3560;
+      --quote-bg: #292e39;
+    }
+
+    article { box-shadow: none; }
+    :not(pre) > code { color: #bdc7ff; }
+  }
+</style>
+</head>
+<body>
+<article>
+
+<h1>用 CloudKit，零成本拥有自己的用户体系</h1>
+
+<p>做独立开发，最容易被低估的一件事，就是“用户体系”。</p>
+
+<p>很多人以为，用户体系只是做一个登录页面：输入手机号，收验证码，然后进入 App。</p>
+
+<p>但真正做起来之后才会发现，登录页面只是开始。后面还有用户 ID、账号找回、多设备同步、数据归属、隐私保护、服务器、数据库、短信费用，以及一大堆需要长期维护的后台逻辑。</p>
+
+<p>对于一个独立开发者来说，这些事情很容易让一个原本简单的产品，变成一个需要持续运维的系统。</p>
+
+<p>有没有一种方式，不搭建服务器，不购买短信服务，也不自己维护一套账号密码系统，就能让 App 拥有基本的用户能力？</p>
+
+<p>有。</p>
+
+<p>答案就是 Apple 提供的 CloudKit。</p>
+
+<h2>一、CloudKit 是什么</h2>
+
+<p>CloudKit 是 Apple 提供的云端数据服务。它和 iCloud 账户、Apple 设备体系深度结合，可以帮助我们保存和同步 App 数据。</p>
+
+<p>它提供了几类基础能力：</p>
+
+<ul>
+  <li>用户身份识别</li>
+  <li>公共数据库</li>
+  <li>私有数据库</li>
+  <li>文件和图片存储</li>
+  <li>数据查询与修改</li>
+  <li>数据变化订阅</li>
+  <li>多设备数据同步</li>
+</ul>
+
+<p>最吸引独立开发者的地方是：我们不需要先购买服务器、配置数据库、设计密码登录接口，也不需要自己处理短信验证码。</p>
+
+<p>用户已经拥有 Apple 账户，而 CloudKit 可以在用户登录 iCloud 的前提下，为 App 提供一个稳定的云端身份。</p>
+
+<p>换句话说，我们可以直接利用 Apple 已经建设好的基础设施，给自己的 App 建立一套用户和数据体系。</p>
+
+<h2>二、CloudKit 能不能当作用户系统</h2>
+
+<p>这里需要先说清楚一个概念：CloudKit 不是传统意义上的“账号密码系统”。</p>
+
+<p>它不会替我们提供一个邮箱密码登录页面，也不会让我们拿到用户的 Apple 账户密码。它做的事情是：在用户允许的范围内，告诉 App 当前设备对应的 CloudKit 用户身份。</p>
+
+<p>整个关系大概是这样：</p>
+
+<pre><code>Apple 账户
+    ↓
+iCloud 身份
+    ↓
+CloudKit 用户 Record ID
+    ↓
+App 自己的 UserProfile
+    ↓
+用户的业务数据</code></pre>
+
+<p>在 App 中，我们通常不需要保存用户的邮箱或真实姓名，而是使用 CloudKit 返回的用户 Record ID 作为当前用户在这个 Container 中的身份标识。</p>
+
+<p>然后，再在自己的数据库中建立一个 UserProfile，保存昵称、头像、设置、会员状态等业务信息。</p>
+
+<p>这样一来，CloudKit 负责“这个人是谁”，App 负责“这个人的资料和业务数据是什么”。</p>
+
+<h2>三、第一次启动时发生了什么</h2>
+
+<p>一个最小可用的用户初始化流程，可以分成几步：</p>
+
+<ol>
+  <li>App 启动后检查 iCloud 账户状态。</li>
+  <li>获取当前 CloudKit 用户的 Record ID。</li>
+  <li>查询当前用户是否已经有 UserProfile。</li>
+  <li>如果没有，就创建一条用户资料。</li>
+  <li>加载这个用户的收藏、设置、历史记录等业务数据。</li>
+  <li>根据需要建立 CloudKit Subscription，监听数据变化。</li>
+</ol>
+
+<p>在 Swift 中，获取当前用户身份的代码并不复杂：</p>
+
+<pre><code>import CloudKit
+
+let container = CKContainer(identifier: "iCloud.com.example.myapp")
+
+container.accountStatus { status, error in
+    guard status == .available else {
+        // 用户没有登录 iCloud，或者当前账户暂时不可用
+        return
+    }
+
+    container.fetchUserRecordID { recordID, error in
+        guard let recordID else {
+            return
+        }
+
+        print("当前用户：\(recordID.recordName)")
+    }
+}</code></pre>
+
+<p>实际项目中，还需要处理网络失败、iCloud 未登录、账户切换和 CloudKit 服务暂时不可用等情况。不要把“成功拿到用户 ID”当作永远成立的前提。</p>
+
+<h2>四、CloudKit 的三种数据库</h2>
+
+<p>CloudKit 中最重要的设计之一，是选择正确的数据库。</p>
+
+<h3>1. Private Database：用户自己的数据</h3>
+
+<p>Private Database 适合保存用户个人数据，例如：</p>
+
+<ul>
+  <li>App 设置</li>
+  <li>收藏记录</li>
+  <li>阅读历史</li>
+  <li>私人笔记</li>
+  <li>用户创建但不想公开的内容</li>
+</ul>
+
+<p>每个用户都有自己的 Private Database。数据天然和当前用户关联，其他用户无法直接读取。</p>
+
+<p>这对于工具类 App 非常方便。我们不需要在每一条数据上重复设计复杂的用户权限，只需要把个人数据放进用户自己的数据库即可。</p>
+
+<h3>2. Public Database：所有用户共享的数据</h3>
+
+<p>Public Database 适合保存公共内容，例如：</p>
+
+<ul>
+  <li>文章</li>
+  <li>公共配置</li>
+  <li>分类信息</li>
+  <li>排行榜</li>
+  <li>用户公开发布的内容</li>
+</ul>
+
+<p>公共数据库中的数据需要认真设计权限。哪些数据所有人可以读取，哪些数据只有创建者可以修改，都应该在数据模型和 CloudKit Dashboard 中明确配置。</p>
+
+<h3>3. Shared Database：共享和协作数据</h3>
+
+<p>Shared Database 适合家庭、团队或多人协作场景，比如共享清单、共同编辑的内容等。</p>
+
+<p>如果 App 只是保存用户个人数据，通常先使用 Private Database 就够了；如果是公共内容，再增加 Public Database。不要一开始就把所有数据都放到公共数据库中。</p>
+
+<p>一个简单的判断方法是：</p>
+
+<blockquote>
+  <p>私人的数据放 Private Database，公开的数据放 Public Database，需要协作的数据再考虑 Shared Database。</p>
+</blockquote>
+
+<h2>五、如何设计自己的用户资料</h2>
+
+<p>CloudKit 会提供用户身份，但不会替我们定义 App 用户资料。</p>
+
+<p>我们可以在自己的模型中设计一个 UserProfile，例如：</p>
+
+<pre><code>UserProfile
+├── recordID
+├── nickname
+├── avatar
+├── createdAt
+├── updatedAt
+├── isPro
+└── settings</code></pre>
+
+<p>然后，用户的其他业务数据通过用户身份建立关联：</p>
+
+<pre><code>UserProfile
+├── 收藏记录
+├── 阅读历史
+├── App 设置
+├── 用户笔记
+└── 订阅状态</code></pre>
+
+<p>需要注意的是，不要把邮箱、真实姓名等敏感信息当作业务主键。Record ID 更适合做内部关联，而昵称、头像等展示资料应该由用户自己设置或授权提供。</p>
+
+<p>另外，Record ID 的使用范围也要理解清楚：它适用于当前 CloudKit Container，不应该简单地当成所有 App、所有平台通用的用户 ID。</p>
+
+<h2>六、CloudKit 如何实现多设备同步</h2>
+
+<p>当用户在 iPhone 和 iPad 上使用同一个 Apple 账户，并且 App 使用同一个 CloudKit Container 时，保存到 Private Database 的数据就可以在设备之间同步。</p>
+
+<p>例如，用户在 iPhone 上收藏了一篇文章：</p>
+
+<pre><code>iPhone 修改数据
+    ↓
+保存到 CloudKit Private Database
+    ↓
+CloudKit 记录发生变化
+    ↓
+iPad 收到变化通知
+    ↓
+iPad 更新本地数据</code></pre>
+
+<p>真正好用的同步体验，通常不是每次打开页面都从云端重新读取，而是采用“本地缓存 + 云端同步”的方式：</p>
+
+<ul>
+  <li>页面优先展示本地数据</li>
+  <li>有网络时上传本地修改</li>
+  <li>云端有变化时拉取更新</li>
+  <li>同步失败时保留待同步状态</li>
+  <li>多设备同时修改时执行冲突处理</li>
+</ul>
+
+<p>CloudKit 更适合最终一致的数据同步，而不是实时数据库。对于聊天、实时协作等场景，仍然需要考虑更专业的后端方案。</p>
+
+<h2>七、CloudKit 的成本：真的完全免费吗</h2>
+
+<p>标题里说“零成本”，主要是站在独立开发者的角度：不需要额外购买一台服务器，也不需要从零开始维护后端用户系统。</p>
+
+<p>但它并不代表完全没有任何成本。</p>
+
+<p>可能节省的成本包括：</p>
+
+<ul>
+  <li>服务器租赁费用</li>
+  <li>数据库维护成本</li>
+  <li>短信验证码费用</li>
+  <li>邮箱登录服务费用</li>
+  <li>用户密码和账号找回系统</li>
+  <li>后端基础设施的运维时间</li>
+</ul>
+
+<p>仍然需要考虑的成本包括：</p>
+
+<ul>
+  <li>Apple Developer Program 账号费用</li>
+  <li>CloudKit 的存储、请求和流量配额</li>
+  <li>大规模用户增长后的容量和费用</li>
+  <li>对 iCloud 账户的依赖</li>
+  <li>CloudKit 数据模型和权限配置的学习成本</li>
+</ul>
+
+<p>所以，更准确的说法是：</p>
+
+<blockquote>
+  <p>CloudKit 是低成本、免运维的用户和数据基础设施，而不是绝对意义上的永久免费后端。</p>
+</blockquote>
+
+<p>对于早期产品、个人工具和小规模 App 来说，这种成本结构已经非常友好。</p>
+
+<h2>八、CloudKit 适合哪些 App</h2>
+
+<p>CloudKit 特别适合以下类型的产品：</p>
+
+<ul>
+  <li>纯 Apple 生态 App</li>
+  <li>笔记、阅读、收藏类 App</li>
+  <li>效率工具和个人管理工具</li>
+  <li>需要多设备同步的 App</li>
+  <li>独立开发者的 MVP 产品</li>
+  <li>不需要复杂服务端计算的应用</li>
+</ul>
+
+<p>它不太适合以下场景：</p>
+
+<ul>
+  <li>必须同时支持 Android、Web 和小程序的产品</li>
+  <li>以手机号为核心身份的业务</li>
+  <li>即时通讯和强实时协作</li>
+  <li>复杂电商和订单系统</li>
+  <li>大型社区和高频公共内容平台</li>
+  <li>依赖复杂后端任务、风控和数据分析的产品</li>
+</ul>
+
+<p>如果未来确实需要支持多个平台，也可以采用混合方案：CloudKit 负责 Apple 平台上的个人数据同步，自建后端负责跨平台用户、订单和复杂业务。</p>
+
+<h2>九、CloudKit 的真正价值</h2>
+
+<p>CloudKit 最大的价值，并不是“免费”两个字。</p>
+
+<p>它真正解决的是：一个人，也可以拥有过去需要后端团队才能维护的基础能力。</p>
+
+<p>你不需要先研究服务器部署，不需要先购买短信服务，也不需要先写一套账号密码和找回流程。只要你的产品主要服务于 Apple 用户，就可以利用用户已有的 Apple 账户，快速建立身份和数据同步能力。</p>
+
+<p>当然，CloudKit 不是万能的。</p>
+
+<p>它有平台限制，有数据配额，也不适合所有复杂业务。但对于一个独立开发者来说，它非常适合作为第一套后端基础设施：足够简单，足够便宜，也足够支撑很多真实产品。</p>
+
+<p>过去，做一个带用户系统的 App，往往意味着先搭建后端。</p>
+
+<p>现在，很多时候可以反过来：</p>
+
+<p class="ending">先把产品做出来，先让用户用起来，等真正遇到 CloudKit 解决不了的问题，再引入更复杂的服务。</p>
+
+<p>这可能就是今天独立开发最重要的变化之一。</p>
+
+<p>一个人，也可以用很低的成本，做出完整的产品。</p>
+
+</article>
+</body>
+</html>

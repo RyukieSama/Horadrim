@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CloudUser_排版_石墨极简风(graphite-minimal) · 公众号排版预览</title>
+<style>
+  body{margin:0;background:#eef0f2;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;-webkit-text-size-adjust:100%;}
+  .gzh-toolbar{position:fixed;top:0;left:0;right:0;height:54px;background:#ffffff;box-shadow:0 1px 10px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:99;}
+  .gzh-hint{font-size:13px;color:#6b7280;line-height:1.4;}
+  .gzh-hint b{color:#111827;}
+  .gzh-copy{background:#059669;color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(5,150,105,.28);white-space:nowrap;transition:transform .08s,background .15s;}
+  .gzh-copy:hover{background:#047857;}
+  .gzh-copy:active{transform:translateY(1px);}
+  .gzh-toast{position:fixed;top:66px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .25s;z-index:100;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:88vw;text-align:center;}
+  .gzh-toast.show{opacity:1;}
+  .gzh-stage{max-width:700px;margin:78px auto 64px;padding:0 8px;}
+  @media(max-width:520px){.gzh-hint{max-width:150px;}}
+</style>
+</head>
+<body>
+<div class="gzh-toolbar">
+  <span class="gzh-hint">👇 下方是排版效果 · 点右侧 <b>复制</b> 直接粘到公众号</span>
+  <button class="gzh-copy" id="gzhCopyBtn" onclick="gzhCopy()">📋 复制到公众号</button>
+</div>
+<div class="gzh-toast" id="gzhToast"></div>
+<div class="gzh-stage">
+  <div id="gzh-content">
+<section style="max-width:677px;margin:0 auto;background:#FFFFFF;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#52525B;line-height:1.8;letter-spacing:0.3px;overflow-x:hidden;">
+
+  <section style="margin:10px 10px 40px;padding:32px 24px 24px;border-top:1px solid #E4E4E7;border-bottom:1px solid #E4E4E7;background:#FFFFFF;">
+    <p style="font-size:11px;color:#A1A1AA;letter-spacing:2px;margin:0 0 18px;font-weight:400;"><span leaf="">QUOTE</span></p>
+    <p style="font-size:18px;font-weight:700;color:#27272A;margin:0 0 8px;line-height:1.7;letter-spacing:0.5px;">
+      <span leaf="">对独立开发者来说，CloudKit 的价值是让</span>
+      <span style="border-bottom:2px solid #52525B;"><span leaf="">一个人也能拥有云端基础设施</span></span>
+    </p>
+  </section>
+
+  <section style="padding:0 10px 40px;">
+    <p style="font-size:11px;color:#A1A1AA;margin:0 0 16px;letter-spacing:2px;"><span leaf="">本文看点</span></p>
+    <section style="display:flex;justify-content:space-between;">
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">用户身份怎么来</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;margin-right:8px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">数据如何同步</span></p>
+      </section>
+      <section style="flex:1;background:#FAFAFA;border-top:1px solid #E4E4E7;padding:18px 12px 16px;">
+        <p style="font-size:11px;color:#A1A1AA;font-weight:500;margin:0 0 8px;letter-spacing:1px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#27272A;margin:0;line-height:1.5;"><span leaf="">成本与适用边界</span></p>
+      </section>
+    </section>
+  </section>
+
+  <section style="padding:0 10px;">
+    <section style="height:1px;background:#E4E4E7;margin:0;"><span leaf=""><br></span></section>
+  </section>
+
+  <section style="margin-top:16px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+      <section style="margin-top:-8px;">
+        <p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">WHY CLOUDKIT</span></p>
+        <h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">为什么独立开发者需要用户体系</span></h3>
+      </section>
+    </section>
+  </section>
+
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;">
+    <span leaf="">做独立开发，最容易被低估的一件事，就是“</span><span style="border-bottom:2px solid #52525B;font-weight:600;color:#27272A;"><span leaf="">用户体系</span></span><span leaf="”。</span>
+  </p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">很多人以为，用户体系只是做一个登录页面：输入手机号，收验证码，然后进入 App。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">但真正做起来之后才会发现，登录页面只是开始。后面还有用户 ID、账号找回、多设备同步、数据归属、隐私保护、服务器、数据库、短信费用，以及一大堆需要长期维护的后台逻辑。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">对于一个独立开发者来说，这些事情很容易让一个原本简单的产品，变成一个需要持续运维的系统。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">有没有一种方式，不搭建服务器，不购买短信服务，也不自己维护一套账号密码系统，就能让 App 拥有基本的用户能力？</span></p>
+  <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 10px 28px;">
+    <p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">有。答案就是 Apple 提供的 CloudKit。</span></p>
+  </section>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;">
+    <section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;">
+      <p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+      <section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">FOUNDATION</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 是什么</span></h3></section>
+    </section>
+  </section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 是 Apple 提供的云端数据服务。它和 iCloud 账户、Apple 设备体系深度结合，可以帮助我们保存和同步 App 数据。</span></p>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">它提供了几类基础能力：</span></p>
+  <section style="margin:0 10px 24px;">
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">用户身份识别</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">公共数据库与私有数据库</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">文件和图片存储、数据查询与修改</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">数据变化订阅与多设备数据同步</span></p></section>
+  </section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">最吸引独立开发者的地方是：我们不需要先购买服务器、配置数据库、设计密码登录接口，也不需要自己处理短信验证码。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">用户已经拥有 Apple 账户，而 CloudKit 可以在用户登录 iCloud 的前提下，为 App 提供一个稳定的云端身份。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">换句话说，我们可以直接利用 Apple 已经建设好的基础设施，给自己的 App 建立一套用户和数据体系。</span></p>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">USER IDENTITY</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 能不能当作用户系统</span></h3></section></section></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">这里需要先说清楚一个概念：CloudKit 不是传统意义上的“账号密码系统”。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">它不会替我们提供一个邮箱密码登录页面，也不会让我们拿到用户的 Apple 账户密码。它做的事情是：在用户允许的范围内，告诉 App 当前设备对应的 CloudKit 用户身份。</span></p>
+  <pre style="margin:0 10px 24px;border-radius:8px;overflow:hidden;background:#1E293B;box-shadow:0 4px 16px -8px rgba(15,23,42,0.4);padding:16px 14px;color:#E2E8F0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;"><code><span leaf="">Apple 账户
+    ↓
+iCloud 身份
+    ↓
+CloudKit 用户 Record ID
+    ↓
+App 自己的 UserProfile
+    ↓
+用户的业务数据</span></code></pre>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">在 App 中，我们通常不需要保存用户的邮箱或真实姓名，而是使用 CloudKit 返回的 Record ID 作为当前用户在这个 Container 中的身份标识。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">然后，再在自己的数据库中建立一个 UserProfile，保存昵称、头像、设置、会员状态等业务信息。</span></p>
+  <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 10px 28px;"><p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">CloudKit 负责“这个人是谁”，App 负责“这个人的资料和业务数据是什么”。</span></p></section>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">FIRST LAUNCH</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">第一次启动时发生了什么</span></h3></section></section></section>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">一个最小可用的用户初始化流程，可以分成几步：</span></p>
+  <section style="margin:0 10px 24px;">
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">1</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">App 启动后检查 iCloud 账户状态。</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">2</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">获取当前 CloudKit 用户的 Record ID。</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">3</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">查询当前用户是否已经有 UserProfile。</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">4</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">如果没有，就创建一条用户资料。</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">5</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">加载这个用户的收藏、设置、历史记录等业务数据。</span></p></section>
+    <section style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:#27272A;color:#fff;font-size:12px;font-weight:700;border-radius:50%;flex-shrink:0;margin-top:2px;"><span leaf="">6</span></span><p style="font-size:15px;color:#52525B;margin:0;line-height:1.8;flex:1;"><span leaf="">根据需要建立 CloudKit Subscription，监听数据变化。</span></p></section>
+  </section>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">在 Swift 中，获取当前用户身份的代码并不复杂：</span></p>
+  <section style="margin:0 10px 24px;border-radius:8px;overflow:hidden;background:#1E293B;box-shadow:0 4px 16px -8px rgba(15,23,42,0.4);">
+    <section style="padding:9px 14px;background:#0F172A;"><span style="font-size:12px;color:#64748B;font-family:Consolas,Monaco,monospace;letter-spacing:1px;"><span leaf="">swift</span></span></section>
+    <section style="padding:11px 14px;">
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">import CloudKit</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf=""></span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">let container = CKContainer(identifier: "iCloud.com.example.myapp")</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf=""></span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">container.accountStatus { status, error in</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　guard status == .available else {</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　// 用户没有登录 iCloud，或者当前账户暂时不可用</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　return</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　}</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf=""></span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　container.fetchUserRecordID { recordID, error in</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　guard let recordID else {</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　　　return</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　}</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf=""></span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　　　print("当前用户：\(recordID.recordName)")</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">　　}</span></p>
+      <p style="margin:0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;color:#E2E8F0;"><span leaf="">}</span></p>
+    </section>
+  </section>
+  <section style="border-left:3px solid #27272A;padding:14px 0 14px 22px;margin:0 10px 24px;"><p style="font-size:14px;font-weight:700;color:#27272A;margin:0;line-height:1.8;"><span leaf="">实际项目中，还需要处理网络失败、iCloud 未登录、账户切换和 CloudKit 服务暂时不可用等情况。不要把“成功拿到用户 ID”当作永远成立的前提。</span></p></section>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">05</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">DATABASE DESIGN</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 的三种数据库</span></h3></section></section></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 中最重要的设计之一，是选择正确的数据库。</span></p>
+  <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 10px 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;"><span leaf="">1. Private Database：用户自己的数据</span></p>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">Private Database 适合保存用户个人数据，例如：</span></p>
+  <section style="margin:0 10px 24px;">
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· App 设置</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 收藏记录</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 阅读历史</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 私人笔记</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 用户创建但不想公开的内容</span></span></p>
+  </section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">每个用户都有自己的 Private Database。数据天然和当前用户关联，其他用户无法直接读取。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">这对于工具类 App 非常方便。我们不需要在每一条数据上重复设计复杂的用户权限，只需要把个人数据放进用户自己的数据库即可。</span></p>
+  <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 10px 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;"><span leaf="">2. Public Database：所有用户共享的数据</span></p>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">Public Database 适合保存公共内容，例如：文章、公共配置、分类信息、排行榜、用户公开发布的内容。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">公共数据库中的数据需要认真设计权限。哪些数据所有人可以读取，哪些数据只有创建者可以修改，都应该在数据模型和 CloudKit Dashboard 中明确配置。</span></p>
+  <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 10px 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;"><span leaf="">3. Shared Database：共享和协作数据</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">Shared Database 适合家庭、团队或多人协作场景，比如共享清单、共同编辑的内容等。</span></p>
+  <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 10px 28px;"><p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">私人的数据放 Private Database，公开的数据放 Public Database，需要协作的数据再考虑 Shared Database。</span></p></section>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">06</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">SYNC &amp; PROFILE</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">用户资料与多设备同步</span></h3></section></section></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 会提供用户身份，但不会替我们定义 App 用户资料。</span></p>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">我们可以在自己的模型中设计一个 UserProfile，例如：</span></p>
+  <pre style="margin:0 10px 24px;border-radius:8px;overflow:hidden;background:#1E293B;padding:16px 14px;color:#E2E8F0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;"><code><span leaf="">UserProfile
+├── recordID
+├── nickname
+├── avatar
+├── createdAt
+├── updatedAt
+├── isPro
+└── settings</span></code></pre>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">然后，用户的其他业务数据通过用户身份建立关联：</span></p>
+  <pre style="margin:0 10px 24px;border-radius:8px;overflow:hidden;background:#1E293B;padding:16px 14px;color:#E2E8F0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;"><code><span leaf="">UserProfile
+├── 收藏记录
+├── 阅读历史
+├── App 设置
+├── 用户笔记
+└── 订阅状态</span></code></pre>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">需要注意的是，不要把邮箱、真实姓名等敏感信息当作业务主键。Record ID 更适合做内部关联，而昵称、头像等展示资料应该由用户自己设置或授权提供。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">另外，Record ID 的使用范围也要理解清楚：它适用于当前 CloudKit Container，不应该简单地当成所有 App、所有平台通用的用户 ID。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">当用户在 iPhone 和 iPad 上使用同一个 Apple 账户，并且 App 使用同一个 CloudKit Container 时，保存到 Private Database 的数据就可以在设备之间同步。</span></p>
+  <pre style="margin:0 10px 24px;border-radius:8px;overflow:hidden;background:#1E293B;padding:16px 14px;color:#E2E8F0;font-family:'SF Mono',Consolas,Monaco,monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;"><code><span leaf="">iPhone 修改数据
+    ↓
+保存到 CloudKit Private Database
+    ↓
+CloudKit 记录发生变化
+    ↓
+iPad 收到变化通知
+    ↓
+iPad 更新本地数据</span></code></pre>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">真正好用的同步体验，通常不是每次打开页面都从云端重新读取，而是采用“本地缓存 + 云端同步”的方式：</span></p>
+  <section style="margin:0 10px 24px;">
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 页面优先展示本地数据</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 有网络时上传本地修改</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 云端有变化时拉取更新</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 同步失败时保留待同步状态</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 多设备同时修改时执行冲突处理</span></span></p>
+  </section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 更适合最终一致的数据同步，而不是实时数据库。对于聊天、实时协作等场景，仍然需要考虑更专业的后端方案。</span></p>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">07</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">COST &amp; LIMITS</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 的成本与适用边界</span></h3></section></section></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">标题里说“零成本”，主要是站在独立开发者的角度：不需要额外购买一台服务器，也不需要从零开始维护后端用户系统。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">但它并不代表完全没有任何成本。</span></p>
+  <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 10px 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;"><span leaf="">可能节省的成本</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">服务器租赁费用、数据库维护成本、短信验证码费用、邮箱登录服务费用、用户密码和账号找回系统，以及后端基础设施的运维时间。</span></p>
+  <p style="font-size:15px;font-weight:800;color:#27272A;margin:28px 10px 14px;padding-left:12px;border-left:3px solid #52525B;line-height:1.4;"><span leaf="">仍然需要考虑的成本</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">Apple Developer Program 账号费用、CloudKit 的存储、请求和流量配额、大规模用户增长后的容量和费用、对 iCloud 账户的依赖，以及数据模型和权限配置的学习成本。</span></p>
+  <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 10px 28px;"><p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">CloudKit 是低成本、免运维的用户和数据基础设施，而不是绝对意义上的永久免费后端。</span></p></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">对于早期产品、个人工具和小规模 App 来说，这种成本结构已经非常友好。</span></p>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">08</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">USE CASES</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 适合哪些 App</span></h3></section></section></section>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 特别适合以下类型的产品：</span></p>
+  <section style="margin:0 10px 24px;">
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 纯 Apple 生态 App</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 笔记、阅读、收藏类 App</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 效率工具和个人管理工具</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 需要多设备同步的 App</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 独立开发者的 MVP 产品</span></span></p>
+    <p style="margin:0 0 6px;"><span style="display:inline-block;font-size:14px;font-weight:700;color:#27272A;background:#F4F4F5;padding:3px 10px;border-radius:999px;"><span leaf="">· 不需要复杂服务端计算的应用</span></span></p>
+  </section>
+  <p style="margin:0 10px 14px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">它不太适合以下场景：</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">必须同时支持 Android、Web 和小程序的产品；以手机号为核心身份的业务；即时通讯和强实时协作；复杂电商和订单系统；大型社区和高频公共内容平台；依赖复杂后端任务、风控和数据分析的产品。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">如果未来确实需要支持多个平台，也可以采用混合方案：CloudKit 负责 Apple 平台上的个人数据同步，自建后端负责跨平台用户、订单和复杂业务。</span></p>
+
+  <section style="margin-top:56px;margin-bottom:32px;padding:0 10px;"><section style="position:relative;padding-bottom:20px;border-bottom:1px solid #E4E4E7;"><p style="font-size:48px;font-weight:900;color:#E4E4E7;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">∞</span></p><section style="margin-top:-8px;"><p style="font-size:10px;color:#A1A1AA;font-weight:500;letter-spacing:3px;margin:0 0 6px;text-transform:uppercase;"><span leaf="">THE END</span></p><h3 style="font-size:20px;font-weight:800;color:#27272A;margin:0;letter-spacing:0.5px;line-height:1.4;"><span leaf="">CloudKit 的真正价值</span></h3></section></section></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">CloudKit 最大的价值，并不是“免费”两个字。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">它真正解决的是：一个人，也可以拥有过去需要后端团队才能维护的基础能力。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">你不需要先研究服务器部署，不需要先购买短信服务，也不需要先写一套账号密码和找回流程。只要你的产品主要服务于 Apple 用户，就可以利用用户已有的 Apple 账户，快速建立身份和数据同步能力。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">当然，CloudKit 不是万能的。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">它有平台限制，有数据配额，也不适合所有复杂业务。但对于一个独立开发者来说，它非常适合作为第一套后端基础设施：足够简单，足够便宜，也足够支撑很多真实产品。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">过去，做一个带用户系统的 App，往往意味着先搭建后端。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">现在，很多时候可以反过来：</span></p>
+  <section style="border-left:3px solid #52525B;padding:16px 0 16px 24px;margin:0 10px 28px;"><p style="font-size:16px;font-weight:700;color:#27272A;margin:0;line-height:1.7;letter-spacing:0.5px;"><span leaf="">先把产品做出来，先让用户用起来，等真正遇到 CloudKit 解决不了的问题，再引入更复杂的服务。</span></p></section>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">这可能就是今天独立开发最重要的变化之一。</span></p>
+  <p style="margin:0 10px 22px;font-size:15px;line-height:1.8;text-align:justify;color:#52525B;letter-spacing:0.3px;"><span leaf="">一个人，也可以用很低的成本，做出完整的产品。</span></p>
+
+  <section style="padding:0 10px;"><section style="text-align:center;margin:0 0 36px;"><section style="display:flex;align-items:center;justify-content:center;"><span style="height:1px;width:48px;background:#E4E4E7;margin-right:16px;"><span leaf=""><br></span></span><span style="font-size:10px;color:#A1A1AA;letter-spacing:4px;font-weight:500;"><span leaf="">END</span></span><span style="height:1px;width:48px;background:#E4E4E7;margin-left:16px;"><span leaf=""><br></span></span></section></section></section>
+  <section style="padding:0 10px 24px;"><section style="border-top:1px solid #E4E4E7;padding-top:28px;"><p style="margin-bottom:16px;font-size:15px;line-height:1.8;color:#52525B;text-align:justify;"><span leaf="">我是 {{作者名}}，{{简介}}。</span></p><p style="margin-bottom:0;font-size:15px;line-height:1.8;color:#52525B;text-align:justify;"><span leaf="">如果你觉得今天这篇有收获，欢迎</span><strong style="color:#27272A;"><span leaf="">点赞、在看、转发</span></strong><span leaf="">三连，我们下篇见。</span></p></section></section>
+
+</section>
+  </div>
+</div>
+<script>
+  function gzhShowToast(msg){
+    var t=document.getElementById('gzhToast');
+    t.textContent=msg;t.classList.add('show');
+    clearTimeout(t._timer);
+    t._timer=setTimeout(function(){t.classList.remove('show');},2800);
+  }
+  function gzhCopy(){
+    var el=document.getElementById('gzh-content');
+    // 选中渲染后的富文本节点并复制（等价于手动 Ctrl+A / Ctrl+C，保留全部样式）
+    var range=document.createRange();
+    range.selectNodeContents(el);
+    var sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    sel.removeAllRanges();
+    var btn=document.getElementById('gzhCopyBtn');
+    if(ok){
+      gzhShowToast('✅ 已复制！去公众号编辑器按 Ctrl/⌘+V 粘贴即可');
+      var old=btn.textContent;btn.textContent='✅ 已复制';
+      setTimeout(function(){btn.textContent=old;},2200);
+    }else{
+      gzhShowToast('⚠ 自动复制失败，请手动全选(Ctrl/⌘+A)再复制(Ctrl/⌘+C)');
+    }
+  }
+</script>
+</body>
+</html>
